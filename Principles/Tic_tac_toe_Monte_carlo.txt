@@ -1,0 +1,92 @@
+"""
+Monte Carlo Tic-Tac-Toe Player
+"""
+
+import random
+import poc_ttt_gui
+import poc_ttt_provided as provided
+
+# Constants for Monte Carlo simulator
+# You may change the values of these constants as desired, but
+#  do not change their names.
+NTRIALS = 100         # Number of trials to run
+SCORE_CURRENT = 1.0 # Score for squares played by the current player
+SCORE_OTHER = 1.0 # Score for squares played by the other player
+
+
+
+# Add your functions here.
+
+
+
+def mc_trial(board,player):
+    """Takes a board, and a player that is nex in turn
+    returns a copy of the board with a random game played
+    """
+    #ovo mozda treba maknuti u nekom trenu ?? mozda i ne??
+    mc_board = board.clone()
+
+    while mc_board.check_win() == None:
+        empty_spot=random.choice(mc_board.get_empty_squares())
+        mc_board.move(empty_spot[0],empty_spot[1],player)        
+        player = provided.switch_player(player)
+    return mc_board
+
+
+
+def mc_update_scores(scores,board,player):
+    """Takes a board and accordingly scores it and adds it up
+    in scores
+    """
+    if board.check_win() == provided.PLAYERX:
+        helper=1
+    elif board.check_win() == provided.PLAYERO:
+        helper=-1
+    else:
+        helper = 0
+    for row in range(board.get_dim()):
+        for col in range(board.get_dim()):
+            if board.square(row,col)== provided.PLAYERX:
+                scores[row][col]+=helper*SCORE_CURRENT
+            if board.square(row,col)== provided.PLAYERO:
+                scores[row][col]+=-helper*SCORE_CURRENT
+
+def get_best_move(board,scores):
+    """Looks at empty spaces in the board and
+    chooses the move with the highest score
+    """
+    max_score=None
+    best_pos=[]    
+    for row,col in board.get_empty_squares():
+        if max_score < scores[row][col]:
+            max_score = scores[row][col]
+            best_pos=[]
+            best_pos.append((row,col))
+        elif max_score == scores[row][col]:
+            best_pos.append((row,col))
+    return random.choice(best_pos)
+
+def mc_move(board,player,trials):
+    """returns the best move depending on the 
+    current status of the game
+    """
+    scores=[[0 for _i in range  (board.get_dim())] for _j in range (board.get_dim())]
+    for _ in range(trials):
+        trial_board=mc_trial(board,player)
+        mc_update_scores(scores,trial_board,player)    
+    return get_best_move(board,scores)
+        
+        
+
+#ovaj 82 red mi baca error na OWL testu jer dobiva
+#praznu tabelu, ali kada ga ja tu testiram sve radi
+#mc_board = mc_trial(provided.TTTBoard(2, False, [[provided.EMPTY, provided.EMPTY], [provided.EMPTY, provided.EMPTY]]), 2) 
+#print(mc_board)
+        
+# Test game with the console or the GUI.  Uncomment whichever 
+# you prefer.  Both should be commented out when you submit 
+# for testing to save time.
+
+
+#provided.play_game(mc_move, NTRIALS, False)        
+#poc_ttt_gui.run_gui(4, provided.PLAYERX, mc_move, NTRIALS, False)

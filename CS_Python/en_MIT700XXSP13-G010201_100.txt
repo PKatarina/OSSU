@@ -1,0 +1,136 @@
+ERIC LANDER: But it isn't just medicine.
+There are a lot of other things going on that touch other parts of society.
+For example, something that I care a great deal about and was involved in
+very early was DNA fingerprinting.
+DNA fingerprinting, an application to the criminal justice system, where
+it's possible using DNA to uniquely identify people.
+And to be able to tell from a little bit of blood, or a little bit of spit,
+or a little bit of semen who it was at the scene of a crime.
+That's been fantastic in certain respects for being able to catch
+people who were guilty parties.
+It's also-- perhaps surprisingly to many people--
+turned out to be incredibly important for vindicating people who were
+convicted when in fact they were innocent.
+It's taught us that the criminal justice system can be just plain
+wrong, that the science is so clear, so sure that we know somehow that a
+jury and a police made a mistake.
+And more than 300 people have been exonerated because of molecular
+biology, including 17 people who were on death row.
+It's a pretty remarkable thing that the science can move to that point.
+And other interesting things that we find out about history.
+It's possible to complement everything that we've learned from archeology
+with things that we can now learn from DNA.
+We can look at the genetic makeup of people around the world, and we can
+begin to trace back common ancestry.
+Who migrated where from where.
+We can trace back and figure out that the entire human population inhabiting
+the world today migrated out from Africa within about the
+last 100,000 years.
+We know that, that we all have common roots back in Africa
+100,000 years or so ago.
+That's interesting because there were other human species on this planet
+more than 100,000 years ago, occupying other niches around the planet.
+And you can ask questions about those other human species, our relatives.
+And in fact it's possible--
+a friend of mine has isolated DNA from the bones of Neanderthals and is able
+to ask the question, on our way out of Africa, did we ever interbreed with,
+mate with, have some kind of a one night stand with a Neanderthal.
+And the answer turns out to be yes.
+It turns out, looking across the class here and everybody watching on the
+web, about on average four percent of your genome is Neanderthal DNA.
+And we know that.
+You are part Neanderthal.
+And we can tell those things.
+And we tell about other things.
+I've got to say, I've been teaching this course for 20 years, although
+I've never been teaching on the web before, but I've been teaching this
+course for 20 years, and all the things I'm telling you about were not
+known when I started teaching the course.
+That's what makes this so much cooler than introductory physics, where
+virtually everything--
+[LAUGHTER]
+ERIC LANDER: I mean nothing against introductory physics, but virtually
+everything you learn in introductory physics, it was some dead white guy in
+the 1600s or something like that.
+Or maybe the 1700s or something like that.
+Whereas so much of what's exciting about what's going on right now is
+going on right now.
+There are remarkable things having to do with genetic engineering.
+It's possible to add genes back to make transgenic plants
+and transgenic animals.
+And that's an incredibly powerful thing.
+We can do that for medical purposes.
+We can make a mouse that carries some mutant form of a gene and can become a
+model for a human disease and study the basis of the human disease in a
+mouse, rather than having to study that in a human being to start with.
+You can make, for example, plants that are resistant to certain herbicides,
+so that they can in fact grow better in certain types of field.
+You can make plants, rice for example, that makes a lot of beta carotene.
+When it makes beta carotene, that's a precursor for vitamin A, and many
+people in the world are deficient in vitamin A. And when they're deficient
+in vitamin A, they can go blind.
+Being able to provide high sources of beta carotene, a pretty wonderful
+thing in rice.
+But it's also controversial.
+There are people in parts of the world who are very bothered about the idea
+of genetically modified foods.
+I think some of that has to do with a lack of clarity--
+is about what does it mean to do genetic modification anyway?
+Is it dangerous in some way?
+I think the more that we actually understand what genetic modification
+is about, or what transgenesis is about, the more people can understand
+it, the more people can make, I think, sensible, rational decisions about it.
+But even beyond this kind of transgenic stuff, which has been
+around now for about a decade or two, there's some really cool things that
+have only been possible for the last several years.
+It's possible right now to take certain genes, put them into nerve
+cells, and be able to then, when they have the gene in them, which makes a
+certain protein that's sensitive to a certain wavelength of light, fire
+those nerves.
+Fire those specific neuron cells by shining that light on them.
+And not just shine the light and turn it on, but pulse, pulse, pulse, pulse,
+pulse, pulse, pulse very quickly and fire these nerve cells at will.
+That allows people to study the nervous system in mice, control all
+sorts of behaviors and answer questions nobody's been able to answer
+for a very long time, which is, what's this set of neurons doing, what's that
+set of neurons doing.
+And you can control them.
+There are some pretty remarkable studies.
+And you may think that's just an experimental thing, but imagine that
+there's a human being who's blind because their photoreceptors somehow
+don't work in their eye.
+What if you could introduce that gene into their retina, and they could
+suddenly again become sensitive to light.
+Well there are people here at MIT working on such things.
+There are people here working on ways of turning this from a discovery tool
+into a tool for real therapeutics for people who can't see.
+That'll take quite some time, but understanding those principles are
+things we're going to do in this course as well.
+Then finally to bring this up to date, this morning at 9:30--
+I promise you this is current stuff.
+This morning at 9:30, I was at a seminar at the Broad Institute--
+where I'm the director--
+and people were giving just a mind boggling talk that 18 months ago would
+have been inconceivable.
+They were talking about tools for going in and editing the genome.
+Not putting in wholesale a whole gene but changing one single letter in the
+entire genetic code of a cell.
+One letter of your choice.
+Being able to model a disease by changing exactly one letter or being
+able to try to cure a disease by changing exactly one letter.
+The paper describing how to do this came out about four weeks ago.
+Four weeks ago.
+It's pretty cool.
+It's still an emerging technology.
+It's pretty exciting where it's going to go.
+But you should have the sense that this is changing under your feet.
+This is changing as things go on.
+Things that are just patently absurd and impossible today turn out to be
+just hard a year or two from now, and turn out eventually to be a high
+school lab project a decade and a half from now or something like that.
+That's what modern biology is.
+All right, so that's an introduction to the whole sweep of things that are
+going on, what you should know about, what everybody should know about, and
+really what I want this course to be about.
+All right, so that's part one.
+Before we go onto the next segment, test yourself with this problem.

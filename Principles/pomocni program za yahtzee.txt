@@ -1,0 +1,20 @@
+hand=(1,2,3,4)
+
+hold=[]
+result=[]
+
+for i in range(len(hand)):
+    result.append(tuple([hand[i]]))
+    for j in range(i+1,len(hand)):
+        hold=[hand[i]]
+        for k in range(j,len(hand)):
+            hold.append(hand[k])
+            result.append(tuple(hold))
+        hold=[]
+        print result
+        
+        
+set_res=set(result)
+print set_res
+
+            

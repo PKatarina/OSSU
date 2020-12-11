@@ -1,0 +1,19 @@
+# My binary search
+
+import math
+
+def BinarySearch(L,l,r,K):
+    if l>r:
+        return False
+    mid = math.floor((l+r)/2)
+    if L[mid] == K:
+        return True
+    else:
+        if K>L[mid]:
+            return BinarySearch(L,mid+1,r,K)
+        else:
+            return BinarySearch(L,l,mid-1,K)
+        
+lista=[2,5,40,55,75,92,102,200]
+
+print BinarySearch(lista,0,len(lista),200)

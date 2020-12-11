@@ -1,0 +1,19 @@
+import poc_simpletest
+
+def test_merging(merge):
+    """ Ovo je za testiranje merginga
+    """
+    
+    suite=poc_simpletest.TestSutie()
+    suite.run_test(merge([0,2,0]), [2,0,0],"T1: ")
+    suite.run_test(merge([0,2,2]), [4,0,0],"T2: ")
+    suite.run_test(merge([2,0,0]), [2,0,0],"T3: ")
+    suite.run_test(merge([2,2,2]), [4,2,0],"T4: ")
+    suite.run_test(merge([2,0,2,4]),[4,4,0,0],"T5: ")
+    suite.run_test(merge([2,2,2,2,2]),[4,4,2,0,0],"T6: ")
+    suite.run_test(merge([8,16,16,8]),[8,32,8,0],"T7: ")
+    
+    suite.report_results()
+    
+    
+                   

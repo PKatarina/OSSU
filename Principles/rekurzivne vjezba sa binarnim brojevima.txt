@@ -1,0 +1,56 @@
+import math
+
+def make_binary(length):
+    """
+    Function that generates ordered list of binary numbers in 
+    ascending order
+    """
+    if length == 0:
+        return [""]
+    
+    all_but_first = make_binary(length - 1)
+    
+    answer = []
+    for bits in all_but_first:
+        answer.append("0" + bits)
+    for bits in all_but_first:
+        answer.append("1" + bits)
+    return answer
+
+
+#print make_binary(2)
+#print make_binary(3)
+
+def bin_to_dec(bin_num):
+    
+    if len(bin_num) == 0:
+        return 0
+    
+    else:
+        return int(bin_num[0])* math.pow(2,len(bin_num)-1) + bin_to_dec(bin_num[1:])
+    
+    
+#print bin_to_dec('1010')
+
+
+def make_gray(length):
+    if length == 0:
+        return [""]
+    all_but_first = make_gray(length - 1)
+    
+    answer = []
+    answer2 = []
+    all_but_first2 = list(all_but_first)
+    all_but_first2.reverse()
+
+    for bits in all_but_first:
+        answer.append("0" + bits)        
+    for bits in all_but_first2:
+        answer.append("1" + bits)
+        
+    return answer 
+
+print "len 2", make_gray(2)
+print  'len 3',make_gray(3)
+print  'len 4',make_gray(4)
+print  'len 5',make_gray(5)

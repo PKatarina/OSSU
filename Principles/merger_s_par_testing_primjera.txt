@@ -1,0 +1,57 @@
+"""
+Merge function for 2048 game.
+"""
+
+def merge(line):
+    """
+    Function that merges a single row or column in 2048.
+    """
+    # replace with your code
+    res_list=[0]*len(line)
+    slide_list=[0]*len(line)
+    
+    #funkcija koja slide-a sve brojeve prema slobodnim
+    #mjestima prema lijevo
+    def sliding(some_line):
+        """funkcija koja slide-a sve brojeve prema 
+        slobodnim    mjestima prema lijevo
+        """
+        slide_line=[0]*len(some_line)
+        bro=0
+        for ite in range(len(some_line)):
+            if some_line[ite]!=0:
+                slide_line[bro]=some_line[ite]
+                bro+=1
+                
+        return slide_line
+    
+    slide_list=sliding(line)
+    for ite in range(0,len(slide_list)):
+        if ite!=len(slide_list)-1 and slide_list[ite]==slide_list[ite+1]:
+            res_list[ite]=slide_list[ite]*2
+            slide_list[ite+1]=0
+        else:
+            res_list[ite]=slide_list[ite]
+       
+    res_list=sliding(res_list)    
+    
+    return res_list
+
+
+
+
+################testing ###################
+#
+my_line=[2,0,2,2,0]
+print(merge(my_line))
+#
+#my_line3=[2,0,2,4]
+#print my_line3,merge(my_line3)
+#my_line7=[0,0,2,2]
+#print my_line7,merge(my_line7)
+#my_line5=[2,2,0,0]
+#print my_line5,merge(my_line5)
+#my_line6=[2,2,2,2,2]
+#print my_line6,merge(my_line6)
+#my_line8=[8,16,16,8] 
+#print my_line8,merge(my_line8)

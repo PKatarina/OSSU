@@ -1,0 +1,18 @@
+    
+
+scores=[[0 for _i in range  (BOARD_DIM)] for _j in range (BOARD_DIM)]
+x=mc_trial(board,provided.PLAYERX)
+y=mc_trial(board,provided.PLAYERX)
+#print provided.STRMAP[x.square(1,1)]
+mc_update_scores(scores,x,provided.PLAYERX)
+mc_update_scores(scores,y,provided.PLAYERX)
+
+#print x
+#print y
+#for i in range(BOARD_DIM):
+#    print scores[i]
+#
+#board.move(1,1,provided.PLAYERX)
+#print board
+#c=get_best_moves(board,scores)
+#print c

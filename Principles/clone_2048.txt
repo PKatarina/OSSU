@@ -1,0 +1,206 @@
+"""
+Clone of 2048 game.
+"""
+
+import poc_2048_gui
+import random
+
+# Directions, DO NOT MODIFY
+UP = 1
+DOWN = 2
+LEFT = 3
+RIGHT = 4
+
+# Offsets for computing tile indices in each direction.
+# DO NOT MODIFY this dictionary.
+OFFSETS = {UP: (1, 0),
+           DOWN: (-1, 0),
+           LEFT: (0, 1),
+           RIGHT: (0, -1)}
+
+def merge(line):
+    """
+    Function that merges a single row or column in 2048.
+    """
+    # replace with your code
+    res_list=[0]*len(line)
+    slide_list=[0]*len(line)
+    
+    #funkcija koja slide-a sve brojeve prema slobodnim
+    #mjestima prema lijevo
+    def sliding(some_line):
+        """funkcija koja slide-a sve brojeve prema 
+        slobodnim    mjestima prema lijevo
+        """
+        slide_line=[0]*len(some_line)
+        bro=0
+        for ite in range(len(some_line)):
+            if some_line[ite]!=0:
+                slide_line[bro]=some_line[ite]
+                bro+=1
+                
+        return slide_line
+    
+    slide_list=sliding(line)
+    for ite in range(0,len(slide_list)):
+        if ite!=len(slide_list)-1 and slide_list[ite]==slide_list[ite+1]:
+            res_list[ite]=slide_list[ite]*2
+            slide_list[ite+1]=0
+        else:
+            res_list[ite]=slide_list[ite]
+       
+    res_list=sliding(res_list)    
+    
+    return res_list
+
+
+class TwentyFortyEight:
+    """
+    Class to run the game logic.
+    """
+
+    def __init__(self, grid_height, grid_width):
+        # replace with your code
+        self.height=grid_height
+        self.width=grid_width
+        self.grid=self.reset()
+        self.new_tile()
+        self.new_tile()
+        self.list_up=[(0,row) for row in range(self.width)]
+        self.list_down=[(self.height-1,row) for row in range(self.width)]
+        self.list_left=[(col,0) for col in range(self.height)]
+        self.list_right=[(col,self.width-1) for col in range(self.height)]
+
+
+    def reset(self):
+        """
+        Reset the game so the grid is empty except for two
+        initial tiles.
+        """
+        a_grid=[[0 for col in range(self.width)] 
+                 for row in range(self.height)]
+        
+        return a_grid
+
+    def __str__(self):
+        """
+        Return a string representation of the grid for debugging.
+        """
+        # replace with your code
+        return str (self.grid)
+
+    def get_grid_height(self):
+        """
+        Get the height of the board.
+        """
+        # replace with your code
+        return (self.height)
+
+    def get_grid_width(self):
+        """
+        Get the width of the board.
+        """
+        # replace with your code
+        return (self.width)
+
+    def move(self, direction):
+        """
+        Move all tiles in the given direction and add
+        a new tile if any tiles moved.
+        """
+        global OFFSETS
+        temp_list=[]
+        cheker=False
+        directions={UP:self.list_up,DOWN:self.list_down,
+                        LEFT:self.list_left,RIGHT:self.list_right}
+        
+        if direction == UP or direction == DOWN:
+            my_range =[self.width,self.height]
+        else:
+            my_range=[self.height,self.width]
+        
+        for bla in range(my_range[0]):  
+            for step in range(my_range[1]):
+                row= directions[direction][bla][0]+step*OFFSETS[direction][0]
+                col= directions[direction][bla][1]+step*OFFSETS[direction][1]   
+                #print "grid",self.grid[row][col]
+                #print "row",row,"col",col
+                temp_list.append(self.grid[row][col])
+            #print "temp list", temp_list
+            temp_list=merge(temp_list)
+            for step in range (my_range[1]):
+                row= directions[direction][bla][0]+step*OFFSETS[direction][0]
+                col= directions[direction][bla][1]+step*OFFSETS[direction][1]
+                if self.grid[row][col]!=temp_list[step]and not cheker:
+                    cheker=True
+                self.grid[row][col]=temp_list[step]
+            temp_list=[]
+        if cheker:
+            self.new_tile()
+        cheker=False
+             
+            
+
+            
+
+
+    def new_tile(self):
+        """
+        Create a new tile in a randomly selected empty
+        square.  The tile should be 2 90% of the time and
+        4 10% of the time.
+        """
+        check=True
+        while check:
+            a_pos=[random.randint(0,self.height-1),
+                   random.randint(0,self.width-1)]
+            for row in range(self.height):
+                for col in range(self.width):
+                    if a_pos==[row,col] and self.grid[row][col]==0:
+                        check=False
+                        #90% sansa da se izabere 2
+                        self.grid[row][col]=random.choice([2,2,2,2,2,2,2,2,2,4])
+                        break
+        
+
+    def set_tile(self, row, col, value):
+        """
+        Set the tile at position row, col to have the given value.
+        """
+        self.grid[row][col]=value
+
+    def get_tile(self, row, col):
+        """
+        Return the value of the tile at position row, col.
+        """
+        # replace with your code
+        return self.grid[row][col]
+
+
+poc_2048_gui.run_gui(TwentyFortyEight(4, 4))
+#
+#my_game=TwentyFortyEight(4,5)
+#print my_game
+#my_game.new_tile()
+#print my_game
+#print "My height", my_game.get_grid_height(),"My width",my_game.get_grid_width()
+#my_game.set_tile(0,3,8)
+#my_game.set_tile(3,4,16)
+#print my_game
+#print my_game.get_tile(3,3)
+#
+#my_game1=TwentyFortyEight(4,5)
+#print my_game1.list_up,my_game1.list_down,my_game1.list_left,my_game1.list_right
+
+#my_game.move(UP)
+##print "down",my_game.move(DOWN)
+#print my_game
+#
+#my_game.move(DOWN)
+#print my_game
+#
+#my_game.move(LEFT)
+#print my_game
+#
+#my_game.move(RIGHT)
+#print my_game

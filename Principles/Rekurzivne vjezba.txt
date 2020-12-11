@@ -1,0 +1,136 @@
+
+
+#zadatak 1
+def triangular_sum(num):
+    if num ==1:
+        return 1
+    else:
+        return num + triangular_sum(num-1)
+    
+#print triangular_sum(10)
+
+#zadatak 2
+
+def number_of_threes(num, count):
+    
+    if num <1:
+        return count
+    else:
+        if num%10 == 3:
+            count+=1
+        return number_of_threes(num/10,count)
+    
+#print number_of_threes(3,0)
+#print number_of_threes(0,0)
+#print number_of_threes(3333,0)
+#print number_of_threes(352354,0)
+
+#zadatak 3
+def is_member(my_list,elem):
+    if my_list == []:
+        return False
+    if elem == my_list[0]:
+        return True
+    else:
+        return is_member(my_list[1:],elem)
+    
+
+#print is_member([1,2,54,32,11,23,5],32)
+#print is_member([1,2,54,32,11,23,5],1)
+#print is_member([1,2,54,32,11,23,5],15)
+#print is_member([],32)
+
+#zadatak 4
+def remove_x(my_string):
+    #base case
+    if my_string == '':
+        return ""
+    else:
+        first_char = my_string[0]
+        rest_removed = remove_x(my_string[1:])
+        if first_char == 'x':
+            return rest_removed
+        else:
+            return first_char + rest_removed
+    
+#print remove_x('dogxxxcat')
+#print remove_x('xxxdogxxxcat')
+#print remove_x('dxoxgxxxcxaxt')
+#print remove_x('xdogxxxcatx')
+#print remove_x('')
+#print remove_x('xxx')
+
+#zadatak 5
+def insert_x(my_string):
+    #base case
+    if len(my_string) <= 1:
+        return my_string
+    else:
+        first_char = my_string[0]
+        rest_word = insert_x(my_string[1:])
+        
+        return first_char + 'x' + rest_word
+#
+#print insert_x('dogcat')
+
+#zadatak 6
+
+def reverse_l(a_list):
+    #base case
+    if len(a_list) < 1:
+        return []
+    else:
+        first_elem = a_list[0]
+        rest_list = reverse_l(a_list[1:])
+        return rest_list + [first_elem]
+    
+#print reverse_l([1,2,3,4])
+
+
+#zadatak 7
+
+def gcd(num1,num2):
+    if num1>num2:
+        if num1%num2 == 0:
+            return num2
+        else:
+            return gcd(num1-num2,num2)
+    else:
+        if num2%num1 == 0:
+            return num1
+        else:
+            return gcd(num1,num2-num1)
+        
+            
+        
+        
+#print gcd(24,18)
+
+#zadatak 8
+
+def slice(my_list,first,last):
+    
+    if my_list == []:
+        return []
+    
+    elif first == last:
+        return [my_list.pop(first)]
+    
+    else:
+        variable=my_list.pop(last)
+        return slice(my_list,first,last-1) + [variable]
+    
+    
+print slice([1,2,3,4,5],2,3)
+def test_slice():
+    """
+    Some test cases for slice
+    """
+    print "Computed:", slice([], 0, 0), "Expected: []"
+    print "Computed:", slice([1], 0, 0), "Expected: []"
+    print "Computed:", slice([1], 0, 1), "Expected: [1]"
+    print "Computed:", slice([1, 2, 3], 0, 3), "Expected: [1, 2, 3]"
+    print "Computed:", slice([1, 2, 3], 1, 2), "Expected: [2]"
+    
+test_slice()
+    
